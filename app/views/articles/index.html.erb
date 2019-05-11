@@ -1,0 +1,28 @@
+<h1 class="title">This is the index</h1>
+
+
+<table class="table">
+  <thead>
+    <tr>
+      <th> ID </th>
+      <th> Title </th>
+      <th> Description </th>
+      <th> Created </th>
+      <th> Updated </th>      
+    </tr>
+  </thead>
+  <tbody>
+  <% @articles.each do |article| %>
+    <tr>
+      <td> <%= article.id %> </td>
+      <td> <%= article.title%> </td>
+      <td> <%= article.description%> </td>
+      <td> <%= article.created_at%> </td>
+      <td> <%= article.updated_at%> </td>
+      <td> <%= link_to "Go", article_path(article.id) %> </td>
+    </tr>
+  </tbody>
+  <% end %>
+</table>
+
+<button class="button"> <%= link_to "New Article", new_article_path %> </button>
