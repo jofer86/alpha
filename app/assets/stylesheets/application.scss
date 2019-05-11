@@ -14,3 +14,11 @@
  *= require_self
  */
 @import "bulma";
+
+.h-color {
+  background: linear-gradient(to bottom, rgba(30,87,153,1) 0%,rgba(125,185,232,0) 100%);
+}
+
+.h-color-1 {
+  background: linear-gradient(to right, rgba(30,87,153,1) 0%,rgba(125,185,232,0) 100%);
+}
