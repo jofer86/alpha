@@ -1,8 +1,9 @@
 <nav class="navbar h-color-1" role="navigation" aria-label="main navigation">
   <div class="navbar-brand ">
   
-      <%= link_to "Alpha Blog", articles_path, class: "navbar-item is-size-5 has-text-light has-text-weight-bold" %>
-   
+      <%= link_to "Alpha Blog", root_path, class: "navbar-item is-size-5 has-text-light has-text-weight-bold" %>
+      <%= link_to "Index", articles_path, class: "navbar-item is-size-5 has-text-light has-text-weight-bold" %>
+      <%= link_to "New Article", new_article_path, class: "navbar-item is-size-5 has-text-light has-text-weight-bold" %>
 
     <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
       <span aria-hidden="true"></span>
