@@ -9,4 +9,5 @@ class User < ApplicationRecord
             uniqueness: { case_sensitive: false },
             format: { with: VALID_EMAIL_REGEX },
             length: { minimum: 8, maximum: 50 }
+  has_secure_password
 end
