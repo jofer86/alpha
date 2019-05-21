@@ -1,0 +1,21 @@
+
+<div class="columns is-mobile is-centered">
+  <div class="column is-half">
+  <h1 class=" title bd-notification is-primary has-text-centered">Welcome to <%=  @user.username %>'s page </h1>  
+  </div>
+</div>
+<div class="columns is-mobile is-centered">
+  <div class="column is-half is-flex is-horizontal-center">
+    <figure class="image is-128x128">
+      <%= gravatar_for @user %>
+    </figure> 
+  </div>
+</div>
+
+<div class="columns is-mobile is-centered">
+  <div class="column is-half">
+  <h2 class=" subtitle bd-notification is-primary has-text-centered"><%=  @user.username %>'s Articles </h2>  
+  </div>
+</div>
+
+<%= render 'articles/article', obj: @user.articles %>

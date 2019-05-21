@@ -1,28 +1,4 @@
 <h1 class="title">This is the index</h1>
 
-
-<table class="table">
-  <thead>
-    <tr>
-      <th> ID </th>
-      <th> Title </th>
-      <th> Description </th>
-
-      <th>Created by</th>      
-    </tr>
-  </thead>
-  <tbody>
-  <% @articles.each do |article| %>
-    <tr>
-      <td> <%= article.id %> </td>
-      <td> <%= article.title%> </td>
-      <td> <%= article.description%> </td>
-
-      <td> <p> Created by:  <%= article.user.username %>, <%= time_ago_in_words(article.created_at) %> ago, last updated: <%= time_ago_in_words(article.updated_at) %> ago </p> </td>
-      <td> <%= link_to "Go", article_path(article.id) %>  </td>
-    </tr>
-  </tbody>
-  <% end %>
-</table>
-
+<%= render 'article', obj: @articles %>
 <button class="button"> <%= link_to "New Article", new_article_path %> </button>

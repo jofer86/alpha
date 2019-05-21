@@ -1,0 +1,32 @@
+<div class="section">
+
+<% if @user.errors.any? %>
+<div class="notification is-danger">
+<button class="delete"></button>
+<h2 class="title">The following errors prevented the article from getting created</h2>
+
+<ul>
+
+<% @user.errors.full_messages.each do |msg| %>
+
+<li><%= msg %></li>
+
+<% end %>
+
+</ul>
+
+<% end %>
+
+
+</div>
+
+  <%= form_for @user do |f| %>
+    <%= f.label :username %>
+    <%= f.text_field :username %>
+    <%= f.label :email %>
+    <%= f.email_field :email %>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+    <%= f.submit class: 'button'%>
+  <% end %>
+  <%= link_to "cancel", articles_path %>
