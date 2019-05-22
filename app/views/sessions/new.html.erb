@@ -1,0 +1,11 @@
+<h1 class="title" align="center"> Login </h1>
+
+<%= simple_form_for(:sessions, url: login_path) do |f| %>
+    
+    <%= f.label :email %>
+    <%= f.email_field :email %>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+    <%= f.submit "Log in", class: 'button'%>
+<% end %>
+  <%= link_to "cancel", articles_path %>

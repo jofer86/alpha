@@ -1,4 +1,6 @@
 <h1 class="title">This is the index</h1>
-
+<div align="center">
+  <%= will_paginate %>
+</div>
 <%= render 'article', obj: @articles %>
 <button class="button"> <%= link_to "New Article", new_article_path %> </button>
