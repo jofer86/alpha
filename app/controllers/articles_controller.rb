@@ -1,11 +1,11 @@
 class ArticlesController < ApplicationController
+  before_action :set_article, only: [:edit, :update, :show, :destroy]
 
   def index
     @articles = Article.paginate(page: params[:page], per_page: 5)
   end
 
   def show
-    @article = get_article
   end
 
   def new
@@ -23,12 +23,9 @@ class ArticlesController < ApplicationController
   end
 
   def edit
-    @article = get_article
   end
 
   def update
-    @article = get_article
-
     if @article.update(article_params)
       redirect_to article_path(@article)
     else
@@ -37,9 +34,7 @@ class ArticlesController < ApplicationController
   end
 
   def destroy
-    @article = get_article
     @article.destroy
-
     redirect_to articles_path
   end
 
@@ -49,8 +44,8 @@ class ArticlesController < ApplicationController
     params.require(:article).permit(:title, :description)
   end
 
-  def get_article
-    Article.find(params[:id])
+  def set_article
+    @article = Article.find(params[:id])
   end
 
 end

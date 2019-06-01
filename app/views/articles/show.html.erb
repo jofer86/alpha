@@ -2,7 +2,10 @@
   <h1 class="title"> <%= @article.title %> </h1>
   <p> <%= @article.description%> </p>
   <br>
+  
   <button class="button"> <%= link_to "Index", articles_path%> </button>
+  <% if logged_in? && current_user == article.user %>
   <button class="button"> <%= link_to "Edit", edit_article_path%> </button>
   <%= link_to "Delete", article_path(@article), method: :delete, data: {confirm: "Are you sure?"}, class: "button is-danger" %>
+  <% end %>
 </section>

@@ -3,4 +3,6 @@
   <%= will_paginate %>
 </div>
 <%= render 'article', obj: @articles %>
+<% if logged_in? %>
 <button class="button"> <%= link_to "New Article", new_article_path %> </button>
+<% end %>
