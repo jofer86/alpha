@@ -17,7 +17,7 @@
 
       <td> <p> Created by:  <%= article.user.username %>, last updated: <%= time_ago_in_words(article.updated_at) %> ago </p> </td>
       <td> <%= link_to "Go", article_path(article.id) %>  </td>
-    <% if logged_in? && current_user == article.user %>  
+    <% if logged_in? && (current_user == article.user || current_user.admin?) %>  
       <td> <%= link_to "Edit", edit_article_path(article) %>  </td>
       <td> <%= link_to "Delete", article_path(article), method: :delete %>  </td>
     <% end %>
