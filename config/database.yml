@@ -22,4 +22,6 @@ test:
 
 production:
   <<: *default
-  database: db/production.sqlite3
+  database: alpha_app_production
+  username: alpha_app
+  password: <%= ENV['ALPHA_APP_DATABASE_PASSWORD'] %>
