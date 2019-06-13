@@ -1,0 +1,10 @@
+<br>
+<h1 class="title"> Listing Of Categories </h1>
+
+
+<% @categories.each do |category|%>
+  <ul>
+    <li class="button is-flex is-primary"> <%= link_to "#{category.name}", category_path(category) %> </li>
+    <br>
+  </ul>
+<% end %>
